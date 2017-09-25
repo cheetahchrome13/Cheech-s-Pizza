@@ -23,7 +23,7 @@ function fillQty() {
 window.addEventListener("load", fillQty, false);
 
 //function to fill options box
-var select2 = document.getElementById("style")
+var select2 = document.getElementById("styles")
 function fillStyles() {
 	var arrayLength = pizzaStyle.length;
 	for (var i = 0; i < arrayLength; i++) {
