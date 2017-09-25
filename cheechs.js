@@ -6,7 +6,7 @@ var qtyID = ["qty0", "qty1", "qty2", "qty3", "qty4", "qty5", "qty6", "qty7", "qt
 var qtyValue = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
 //options arrays
-var pizzaStyle = ["pizza #1 - The Cheapskate", "pizza #2 - All-Veggie Naan Pie", "pizza #3 - The Tortizza", "pizza #4 - The Whatsa Matter for You?", "pizza #5 - Chicago-Style Heart Attack Meat Pie"];
+var pizzaStyle = ["pizza #1 - The Cheapskate", "pizza #2 - All-Veggie Naan Pie", "pizza #3 - The Tortizza", "pizza #4 - The Whatsa Matter for You? (Anchovies!)", "pizza #5 - Chicago-Style Heart Attack Meat Pie"];
 var pID = ["pie0", "pie1", "pie2", "pie3", "pie4"];
 var pValue = ["12", "14", "16", "18", "20"];
 
@@ -38,26 +38,31 @@ window.addEventListener("load", fillStyles, false);
 
 function calcTotal() {
 	var tax = .076;
-	var qtyTotal = 0;
-	var styleTotal = 0;
-	var orderTotal = 0;
-	for (var i = 0; i < pizzaQty.length; i++) {
-		var quantity = document.getElementById("qty" + i);
-		if (quantity[i].selected) {
-			qtyTotal += (quantity[i].value * 1);
-		}
-	}
-	for (var i = 0; i < pizzaStyle.length; i++) {
-		var style = document.getElementById("pie" + i)
-		if (style[i].selected) {
-			styleTotal += (style[i].value * 1);
-		}
-	var subTotal = qtyTotal * styleTotal;
-	orderTotal += subTotal + (subtotal * tax);
-	document.getElementById("total").innerHTML = "Your order total is $" + orderTotal + ".00";
-	}
+	// var qtyTotal = 0;
+	// var styleTotal = 0;
+	//var orderTotal = 0;
+	var quantity = document.getElementById("qty").selected.value;
+	var style = document.getElementById("styles").selected.value;
+	var subtotal = quantity * style;
+	var orderTotal = subtotal + (subtotal * tax);
+	// for (var i = 0; i < pizzaQty.length; i++) {
+		// var quantity = document.getElementById("qty" + i);
+		// if (quantity[i].selected) {
+			// qtyTotal += (quantity[i].value * 1);	
+		// }
+	// }
+	// for (var i = 0; i < pizzaStyle.length; i++) {
+		// var style = document.getElementById("pie" + i)
+		// if (style[i].selected) {
+			// styleTotal += (style[i].value * 1);
+		// }
+	// var subTotal = qtyTotal * styleTotal;
+	// orderTotal += subTotal + (subtotal * tax);
+    document.getElementById("total").innerHTML = "Your order total is $" + orderTotal;
+	// }
 }
-		//backward compatible event listener for submit button
+
+//event listener for submit button
 var orderButton = document.getElementById("order");
 orderButton.addEventListener("click", calcTotal, false);
 	
