@@ -10,7 +10,7 @@ var pizzaStyle = ["pizza #1 - The Cheapskate", "pizza #2 - All-Veggie Naan Pie",
 var pID = ["pie0", "pie1", "pie2", "pie3", "pie4"];
 var pValue = ["12", "14", "16", "18", "20"];
 
-//function to fill qty box       //"<li id='" + qtyID[i] +"' value='" + qtyValue[i] + "'> " + pizzaQty[i] + " </li>";
+//function to fill qty box       
 var select = document.getElementById("qty");
 function fillQty() {
 	var arrayLength = pizzaQty.length;
@@ -23,8 +23,8 @@ function fillQty() {
 window.addEventListener("load", fillQty, false);
 
 //function to fill options box
-var select2 = document.getElementById("options")
-function fillOptions() {
+var select2 = document.getElementById("style")
+function fillStyles() {
 	var arrayLength = pizzaStyle.length;
 	for (var i = 0; i < arrayLength; i++) {
 	var htmlString = "<option id='" + pID[i] +"' value='" + pValue[i] + "'> " + pizzaStyle[i] + " </option>";
@@ -32,7 +32,7 @@ function fillOptions() {
     }
 }
 //event listener for fillOptions
-window.addEventListener("load", fillOptions, false);
+window.addEventListener("load", fillStyles, false);
 
 //function to add values of selected check boxes and display total
 
@@ -41,16 +41,15 @@ function calcTotal() {
 	var qtyTotal = 0;
 	var styleTotal = 0;
 	var orderTotal = 0;
-	var quantity = document.getElementById("qty" + "");
-	var style = document.getElementById("pie" + "")
-	for (var i =0; i < pizzaQty.length; i++) {
-		if (quantity[i].checked) {
+	for (var i = 0; i < pizzaQty.length; i++) {
+		var quantity = document.getElementById("qty" + i);
+		if (quantity[i].selected) {
 			qtyTotal += (quantity[i].value * 1);
 		}
-	//document.getElementById("total").innerHTML = "Your order total is $" + orderTotal + ".00";
 	}
-	for (var i =0; i < pizzaStyle.length; i++) {
-		if (style[i].checked) {
+	for (var i = 0; i < pizzaStyle.length; i++) {
+		var style = document.getElementById("pie" + i)
+		if (style[i].selected) {
 			styleTotal += (style[i].value * 1);
 		}
 	var subTotal = qtyTotal * styleTotal;
@@ -58,11 +57,7 @@ function calcTotal() {
 	document.getElementById("total").innerHTML = "Your order total is $" + orderTotal + ".00";
 	}
 }
-		//backward compatible event listener for submit button
+		//event listener for submit button
 var orderButton = document.getElementById("order");
-	if (orderButton.addEventListener) {
-		orderButton.addEventListener("click", calcTotal, false);
-	}
-	else if (orderButton.attachEvent) {
-		orderButton.attachEvent("onclick", calcTotal);
-	}
+orderButton.addEventListener("click", calcTotal, false);
+	
