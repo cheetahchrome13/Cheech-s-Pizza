@@ -57,7 +57,7 @@ function calcTotal() {
 	document.getElementById("total").innerHTML = "Your order total is $" + orderTotal + ".00";
 	}
 }
-		//event listener for submit button
+		//backward compatible event listener for submit button
 var orderButton = document.getElementById("order");
 orderButton.addEventListener("click", calcTotal, false);
 	
