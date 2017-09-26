@@ -41,8 +41,8 @@ function calcTotal() {
 	// var qtyTotal = 0;
 	// var styleTotal = 0;
 	// var orderTotal = 0;
-    var quantity = document.getElementById("qty").options.selectedIndex.value;
-	var style = document.getElementById("styles").options.selectedIndex.value;
+    var quantity = document.getElementById("qty").value;
+	var style = document.getElementById("styles").value;
 	var subTotal = (quantity * style);
 	var orderTotal = subTotal + (subTotal * tax);
 	// for (var i = 0; i < pizzaQty.length; i++) {
