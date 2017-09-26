@@ -40,25 +40,26 @@ function calcTotal() {
 	var tax = .076;
 	// var qtyTotal = 0;
 	// var styleTotal = 0;
-	//var orderTotal = 0;
-	var quantity = document.getElementById("qty").selected.value;
-	var style = document.getElementById("styles").selected.value;
-	var subtotal = quantity * style;
-	var orderTotal = subtotal + (subtotal * tax);
+	// var orderTotal = 0;
+    var quantity = document.getElementById("qty").options.selectedIndex.value;
+	var style = document.getElementById("styles").options.selectedIndex.value;
+	var subTotal = (quantity * style);
+	var orderTotal = subTotal + (subTotal * tax);
 	// for (var i = 0; i < pizzaQty.length; i++) {
 		// var quantity = document.getElementById("qty" + i);
-		// if (quantity[i].selected) {
+		// if (quantity[i].selected = true) {
 			// qtyTotal += (quantity[i].value * 1);	
 		// }
 	// }
 	// for (var i = 0; i < pizzaStyle.length; i++) {
 		// var style = document.getElementById("pie" + i)
-		// if (style[i].selected) {
+		// if (style[i].selected = true) {
 			// styleTotal += (style[i].value * 1);
 		// }
 	// var subTotal = qtyTotal * styleTotal;
 	// orderTotal += subTotal + (subtotal * tax);
     document.getElementById("total").innerHTML = "Your order total is $" + orderTotal;
+	//document.getElementById("total").innerHTML = "Your order total is $" + style + quantity;
 	// }
 }
 
