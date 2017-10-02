@@ -50,7 +50,7 @@ function calcTotal() {
 	var cell = document.getElementById("phone").value;
 	var tax = .076;
   var quantity = document.getElementById("qty").value;
-  var pizza = document.getElementById("styles").name;
+  var pizza = pizzaStyle[document.getElementById("styles").selectedIndex];
 	var style = document.getElementById("styles").value;
 	var subTotal = (quantity * style);
 	var orderTotal = subTotal + (subTotal * tax);
