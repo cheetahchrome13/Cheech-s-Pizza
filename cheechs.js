@@ -58,7 +58,7 @@ function calcTotal() {
     document.getElementById("ph").innerHTML = "Phone: " + cell;
     document.getElementById("q").innerHTML = "Qty: " + quantity;
     document.getElementById("sty").innerHTML = "Style: " + pizza;
-    document.getElementById("sub").innerHTML = "Subtotal: $" + subTotal.toFixed(2) + " + 7.6% tax";
+    document.getElementById("sub").innerHTML = "Subtotal: $" + subTotal.toFixed(2) + "+(7.6% tax) $" + (subTotal * tax).toFixed(2);
     document.getElementById("total").innerHTML = "Your order total is $"
     + orderTotal.toFixed(2);
 }
