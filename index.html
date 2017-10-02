@@ -18,34 +18,48 @@
   </head>
   <body>
 	<div class="container-fluid">
-		<h1>Cheech's Pizza</h1>
+    <img src="cheechsLogo.png" class="img-responsive center-block cheech">
+		<!-- <h1>Cheech's Pizza</h1> -->
 		<form>
-			<div class="form-group">
+			<div class="form-group form-group-sm col-sm-12 col-med-8 col-lg-8 col-lg-offset-2">
 				<label for="name">Name</label>
 				<input type="text" class="form-control" id="name" placeholder="Enter First and Last name">
 		    </div>
 
-			<div class="form-group">
+			<div class="form-group form-group-sm col-sm-12 col-med-8 col-lg-8 col-lg-8 col-lg-offset-2">
 				<label for="phone">Phone Number</label>
 				<input type="text" class="form-control" id="phone" placeholder="Enter (area code) + phone number">
 		    </div>
 
-		    <div class="form-group">
+		    <div class="form-group form-group-sm col-sm-12 col-med-8 col-lg-8 col-lg-8 col-lg-offset-2">
 				<label for="qty">How many pies you want?</label>
 				<select class="form-control" id="qty">
 				<!-- <option></option> -->
 				</select>
 		    </div>
 
-			<div class="form-group">
+			<div class="form-group form-group-sm col-sm-12 col-med-8 col-lg-8 col-lg-8 col-lg-offset-2">
 				<label for="styles">What kind of pies you want?</label>
 				<select class="form-control" id="styles">
 				<!-- <option></option> -->
 				</select>
 		    </div>
-		  <button type="button" class="btn btn-default" id="order" value="submit">Place Order</button>
+		  <!-- <img src="orderBtn.png" type="button" class="img-responsive col-lg-3 col-lg-offset-2" id="order" value="submit"> btn btn-lg--> -->
 		</form>
-		<p id="total"></p>
+    <div class="row-featurette">
+      <div class="col-lg-3 col-lg-offset-2">
+        <img src="orderBtn.png" type="button" class="featurette-image
+        img-responsive center-block" id="order" value="submit" alt="pizza"><!--col-lg-3 col-lg-offset-2-->
+      </div>
+       <div class="col-lg-3">
+        <p id="cust" class""></p>
+        <p id="ph" class""></p>
+        <p id="q" class""></p>
+        <p id="sty" class""></p>
+        <p id="total" class""></p>
+      </div>
+      </div>
+    </div>
 	</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

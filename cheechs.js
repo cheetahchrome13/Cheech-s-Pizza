@@ -15,6 +15,7 @@ var pizzaStyle = ["The Cheapskate - cheese pizza  $12",
  "Chicago-Style Heart Attack Meat Pie - da' works! $20"];
 var pID = ["pie0", "pie1", "pie2", "pie3", "pie4"];
 var pValue = ["12", "14", "16", "18", "20"];
+var pizzaName =["cheapskate", "naan", "tortizza", "whatsa", "chicago"]
 
 //function to fill qty box
 var select = document.getElementById("qty");
@@ -35,7 +36,7 @@ var select2 = document.getElementById("styles")
 function fillStyles() {
 	var arrayLength = pizzaStyle.length;
 	for (var i = 0; i < arrayLength; i++) {
-	var htmlString = "<option id='" + pID[i] +"' value='" + pValue[i] + "'> "
+	var htmlString = "<option id='" + pID[i] +"' value='" + pValue[i] + "' name='" + pizzaName[i] + "'> "
 	+ pizzaStyle[i] + " </option>";
 	select2.innerHTML += htmlString;
     }
@@ -48,12 +49,17 @@ function calcTotal() {
 	var customer = document.getElementById("name").value;
 	var cell = document.getElementById("phone").value;
 	var tax = .076;
-    var quantity = document.getElementById("qty").value;
+  var quantity = document.getElementById("qty").value;
+  var pizza = document.getElementById("styles").name;
 	var style = document.getElementById("styles").value;
 	var subTotal = (quantity * style);
 	var orderTotal = subTotal + (subTotal * tax);
-    document.getElementById("total").innerHTML = customer + "Phone: " + cell
-		+ "Your order total is $" + orderTotal.toFixed(2);
+    document.getElementById("cust").innerHTML = "Customer: " + customer;
+    document.getElementById("ph").innerHTML = "Phone: " + cell;
+    document.getElementById("q").innerHTML = "Qty: " + quantity;
+    document.getElementById("sty").innerHTML = "Style: " + pizza;
+    document.getElementById("total").innerHTML = "Your order total is $"
+    + orderTotal.toFixed(2);
 }
 
 //event listener for submit button

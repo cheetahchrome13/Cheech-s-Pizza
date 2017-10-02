@@ -1,5 +1,22 @@
 /*cheechs styles*/
 
 body {
-background-color: #74992e
+background-image: url("cheechsBg.jpg");
+}
+
+label {
+  font-family: tahoma;
+  font-size: 1em;
+  color: #faf9a1;
+}
+
+p {
+  font-family: tahoma;
+  font-size: 1.5em;
+  color: #faf9a1;
+  /*clear: both;*/
+}
+
+.cheech {
+  margin-bottom: 1em;
 }
